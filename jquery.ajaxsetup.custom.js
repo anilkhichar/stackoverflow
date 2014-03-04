@@ -44,8 +44,6 @@ $(function(){
 
 /*
 File Name   : jquery.ajaxsetup.custom.js
-Created By  : Anil Kumar Khichar (MA)
+Created By  : Anil Kumar Khichar
 Created on  : March 03, 2014
-PTID        : 66504400
-Description : Continuation of #64670538 for Gabelli Research Coverage-Small Updates
 */
