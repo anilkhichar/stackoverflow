@@ -69,6 +69,6 @@ var reset_datepicker = function(){
 
 /*
 File Name   : datepicker.custom.js
-Created By  : Anil Kumar Khichar (MA)
+Created By  : Anil Kumar Khichar
 Created on  : Feb 28, 2014
 */
