@@ -71,6 +71,4 @@ var reset_datepicker = function(){
 File Name   : datepicker.custom.js
 Created By  : Anil Kumar Khichar (MA)
 Created on  : Feb 28, 2014
-PTID        : 66504400
-Description : Continuation of #64670538 for Gabelli Research Coverage-Small Updates
 */
