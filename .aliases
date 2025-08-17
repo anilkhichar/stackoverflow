@@ -1,0 +1,87 @@
+# HOW TO USE:
+############################################################
+vi ~/.zshrc
+# The next line updates PATH for the Google Cloud SDK.
+#if [ -f '/Users/ak/install/google-cloud-sdk/path.zsh.inc' ]; then . '/Users/ak/install/google-cloud-sdk/path.zsh.inc'; fi
+
+# The next line enables shell command completion for gcloud.
+#if [ -f '/Users/ak/install/google-cloud-sdk/completion.zsh.inc' ]; then . '/Users/ak/install/google-cloud-sdk/completion.zsh.inc'; fi
+
+#if [ -f ~/.aliases ]; then
+#. ~/.aliases
+#fi
+################################################################
+
+
+# Git commands
+alias gs="git status"
+alias gf="git fetch && git pull"
+alias gp="git pull"
+alias gr="git rebase main"
+alias gc="git checkout "
+alias gfp="git push -f "
+
+# Docker commands
+alias di="docker image ls"
+
+# Start AWS settings
+alias awslogin="aws sso login"
+# End - AWS Settings
+
+# start - GCP settings
+PROJECT=xyz-dev
+CLUSTER_NAME=x
+REGION=us-central1
+
+alias kgc="gcloud container clusters get-credentials $CLUSTER_NAME --region $REGION --project $PROJECT"
+
+alias k="kubectl"
+alias kos="k config set-context --current --namespace=x-shared-opensearch"
+alias ktest="k config set-context --current --namespace=x-test-app"
+alias kdev="k config set-context --current --namespace=x-dev-app"
+alias kragflow="k config set-context --current --namespace=x-shared-ragflow"
+
+alias ks="k get svc"
+alias kdp="k get deployments"
+
+alias kn="k get nodes"
+alias kp="k get pods"
+alias kd="k describe "
+# alias kp="k get pods -w"
+
+alias kl="k logs -f "
+
+alias ka="k apply -f "
+
+alias ke="k exec -it pods/access-test-pod --namespace=default -- /bin/bash"
+alias kep="k exec -it "
+
+alias ktn="k top nodes"
+alias ktp="k top pods"
+
+alias kcrd='k get crds | grep -v "google" | grep -v "gke" | grep -v "k8s" | grep -v "cilium"'
+
+alias myip="curl https://checkip.amazonaws.com/"
+alias pb="cd $HOME/clients/xyz/x"
+alias s="source ~/.zshrc"
+
+alias pyenvlist="pyenv versions"
+alias pyenvdelete="echo \"pyenv virtualenv-delete xyz\" "
+alias pyenvactivate="echo \"pyenv activate venv31\" "
+alias pyenvinstall="echo \"pyenv install 3.13.6\" "
+alias pyenvcreate="echo \"pyenv virtualenv 3.13.6 venv313\" "
+
+alias mktg_prod_db="ssh -i $HOME/.ssh/google_compute_engine -N -L 5432:127.0.0.1:5432 $(basename $HOME)@cloudsql-bastion-vm -o \"ProxyCommand gcloud compute ssh cloudsql-bastion-vm --zone=us-east4-c --tunnel-through-iap --ssh-flag='-W %h:%p'\" & "
+
+alias local_llm_install_serve="pip install --upgrade open-webui && open-webui serve"
+alias local_llm_serve="open-webui serve"
+
+alias gcreate="gcloud config configurations create "
+alias glist="gcloud config configurations list" 
+alias gactivate="gcloud config configurations activate"
+alias gauth="gcloud auth application-default login"
+
+alias stagegcloud_customer="gcloud config configurations activate x-staging"
+alias stagessh_customer="gcloud compute ssh --zone us-central1-c staging-psql-xyz --tunnel-through-iap --project x-staging"
+alias stagepsql_customer="PGPASSWORD=... psql -h 1.1.1.1 -p 5432 -U user -d app"
+alias stagegke_customer="gcloud container clusters get-credentials status --zone us-central1-a --project x-staging"
